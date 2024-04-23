@@ -52,8 +52,7 @@ jobs:
 
       - name: Deploy to Lambda
         run: |
-          aws lambda update-function-code --function-name CIS470Activity10 --zip-file fileb://deployment-package.zip
-
+          arn:aws:lambda:us-east-2:992382575034:function:CIS470Activity10
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
