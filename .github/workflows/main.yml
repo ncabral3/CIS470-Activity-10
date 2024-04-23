@@ -2,7 +2,7 @@ name: Deploy Lambda
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
 
@@ -14,7 +14,7 @@ jobs:
 
       - name: Install Node.js
         uses: actions/setup-node@v4
-        with: 
+        with:
           node-version: '14' # Adjust version as per your requirement
 
       - name: Install dependencies
@@ -41,7 +41,7 @@ jobs:
 
       - name: Install Node.js
         uses: actions/setup-node@v4
-        with: 
+        with:
           node-version: '14' # Adjust version as per your requirement
 
       - name: Install dependencies
@@ -52,9 +52,9 @@ jobs:
 
       - name: Deploy to Lambda
         run: |
-          aws:lambda:us-east-2:992382575034:function:CIS470Activity10
+          aws lambda update-function-code --function-name CIS470Activity10 --zip-file fileb://deployment-package.zip --region us-east-2
+
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      AWS_DEFAULT_REGION: 'us-east-1'
-
+      AWS_DEFAULT_REGION: 'us-east-2'
