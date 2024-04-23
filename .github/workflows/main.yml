@@ -52,7 +52,7 @@ jobs:
 
       - name: Deploy to Lambda
         run: |
-          arn:aws:lambda:us-east-2:992382575034:function:CIS470Activity10
+          aws:lambda:us-east-2:992382575034:function:CIS470Activity10
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
